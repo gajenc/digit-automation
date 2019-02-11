@@ -68,3 +68,10 @@ Good to-Test:
  - Test the integration between services and integrations broadly. Possibly automate through contracts/mock responses, etc..
  - Need to ensure the Unit/Integration tests are broadly covered.
  - Need to ensure the code quality, ESLint, checkstyle and PMD data are being captured and meeting the expected thresholds.
+ - 
+ 
+While testing the randomly I could see the page is broken:
+
+https://gitlab.com/gajendranc/about-you-qa-challenge/blob/master/PHOTO-2019-02-12-00-14-42.jpg
+
+https://gitlab.com/gajendranc/about-you-qa-challenge/blob/master/PHOTO-2019-02-12-00-15-19.jpg
