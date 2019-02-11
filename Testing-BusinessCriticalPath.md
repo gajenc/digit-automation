@@ -52,6 +52,23 @@ List of Critical paths to test: (Not specifiying tests for Negative flows or inv
     4.  Concent acceptance for the financial information/data security
     5.  security testing with accepted PCI compalint or likewise
     6.  Email/order notification upon both successful/non-successful transaction with the referance number.
+    7.  
+7. Post order validations:
+    1. My orders list
+    2. Estimated delivery time and tracking information
+    3. Live traction of various stages until the delivery.
+
+8. Post delivery validations:
+    1. Delivery confirmation email and acceptance.
+    2. Prdouct Review submission, listing product images by customers
+    2. Return request flow for various category
+    3. Refund Initiation/confirmation payment reversal/Tax refund
+    4. Vendor notification workflow
+    5. Email confirmation, etc..
+    
+9. Product listing/CRM:
+    1. Vendors to upload images, listing options, etc..
+    2. Postal service integration/payments.
 
 
 Good to-Test:
