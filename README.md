@@ -1,2 +1,0 @@
-# about-you-QA-challenge
-
