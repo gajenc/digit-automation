@@ -1,0 +1,22 @@
+{
+  "name": "e2e-product-buy-test",
+  "version": "1.0.0",
+  "description": "E2E product buying workflow Tests",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node --nolazy --inspect-brk=9229",
+    "test": "cypress verify",
+    "test:ci:int": "DEBUG=cypress:* cypress run --env testenv=integration --record --key 9fdbdd7b-bf65-4550-b86d-8502adf9c009",
+    "test:ci:stage": "DEBUG=cypress:* cypress run --env testenv=stage --record --key 9fdbdd7b-bf65-4550-b86d-8502adf9c009",
+    "test:ci:qa": "DEBUG=cypress:* cypress run --env testenv=qa --record --key 9fdbdd7b-bf65-4550-b86d-8502adf9c009",
+    "test:env": "CYPRESS_testenv=\"${params.TEST_ENV}\"",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run --browser chrome",
+    "test:e2e:smoke:int": "cypress run --browser chrome --spec 'cypress/integration/e2e-tests.spec.js' --env testenv=integration"
+  },
+  "author": "Gajendran C",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^3.1.5"
+  }
+}
