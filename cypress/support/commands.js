@@ -24,6 +24,10 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+
+// To Handle the iFrames on Signup/Sign-in page and Payment Gateway 
+
+
 Cypress.Commands.add("iframe", { prevSubject: "element" }, $iframe => {
     Cypress.log({
       name: "iframe",

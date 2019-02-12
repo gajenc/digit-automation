@@ -4,7 +4,8 @@ const users = {
     lastname: 'Chandrappa',
     email: 'gajendran.testing@',
     gender: 'male',
-    password: 'Test$'
+    password: 'Test$',
+    productToSearch: 'Shirt'
   }
 };
 

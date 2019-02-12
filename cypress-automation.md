@@ -16,7 +16,7 @@ General:
         - Results can be captured with screenshots, video and the history being captured
         - User defined/custom commands are added to handle the iFrame
         - CI Jenkins file is setup to run them as part of a build pipeline.
-
+        - It runs both headless as well as on chrome browser, can run on AWS cloud, jenkins slaves, etc
 To-DO:
     * Still lot to add/enhance the coverage and functionalities.
 
