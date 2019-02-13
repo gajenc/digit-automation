@@ -81,7 +81,7 @@ describe('ABOUT YOU E2E Tests', () => {
 
     it('Select the size and the colour', () => {
     //To-Do: add validations
-        cy.get('.ColorSelectionItem__ImageHolder-sc-1l4fvoo-1').first().click()  //change colour
+        cy.get('.ColorSelectionItem__Container-sc-1l4fvoo-0 .CdnImage__StyledImg-upef3-0').first().click()  //change colour
         cy.get('[data-cy-id="size_38"]').click() //select 38 size
         
         // TODO: Need to add Size Conditions
@@ -92,7 +92,7 @@ describe('ABOUT YOU E2E Tests', () => {
         //     cy.get('[data-cy-id="size_38"]').click()
         // }
         
-       cy.get(':nth-child(2) > .Accordion__Container-sc-13l9x97-1 > .Accordion__Header-sc-13l9x97-0 > .Accordion__CollapseIndicator-sc-13l9x97-3').click()
+       cy.get('.Accordion__CollapseIndicator-sc-13l9x97-3').eq(0).click()
 
 
     })
