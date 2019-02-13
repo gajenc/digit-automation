@@ -10,7 +10,7 @@ describe('ABOUT YOU E2E Tests', () => {
         // Check the XHR response for the successful loading of the categories on the Home page
         cy.server()
         cy.route('**/v1/categories/**').as('getCategories')
-        cy.wait('@getCategories', {timeout: 250000})
+        cy.wait('@getCategories', {timeout: 50000})
         cy.server({ enable: false })
 
         cy.contains('ABOUT YOU')  // Quick check if the ui elements are loaded
@@ -25,15 +25,17 @@ describe('ABOUT YOU E2E Tests', () => {
     
         cy.server()
         cy.route('**/wishlist/**').as('getWishlist')
-        cy.wait('@getWishlist', {timeout: 250000})
+        cy.wait('@getWishlist', {timeout: 50000})
         cy.server({ enable: false })
     
         cy.get('.Header__HeaderIconLink-ryefjo-5').first().click()  // Click Search
 
         cy.server()
         cy.route('**/search/**').as('getSearch')
-        cy.wait('@getSearch', {timeout: 250000})
+        cy.wait('@getSearch', {timeout: 50000})
         cy.server({ enable: false })
+
+        cy.get('.TopCategorySwitchItem__GenderSelectButton-sc-15ldosy-1').last().click()
 
         cy.get('input[placeholder="Suche nach Marken, Artikeln und mehr…"]').type(users['default'].productToSearch) // Enter the product to search
 
@@ -41,7 +43,7 @@ describe('ABOUT YOU E2E Tests', () => {
 
         cy.server()
         cy.route('**/recommendations/**').as('getRecommendations')
-        cy.wait('@getRecommendations', {timeout: 250000})
+        cy.wait('@getRecommendations', {timeout: 50000})
         cy.server({ enable: false })
     }) 
 
@@ -81,7 +83,8 @@ describe('ABOUT YOU E2E Tests', () => {
 
     it('Select the size and the colour', () => {
     //To-Do: add validations
-        cy.get('.ColorSelectionItem__Container-sc-1l4fvoo-0 .CdnImage__StyledImg-upef3-0').first().click()  //change colour
+        //cy.get('.Button-sc-1kjlfn7-0').first().click({force:true})
+        cy.get('.CdnImage__StyledImg-upef3-0').first().click()  //change colour
         cy.get('[data-cy-id="size_38"]').click() //select 38 size
         
         // TODO: Need to add Size Conditions
@@ -92,8 +95,8 @@ describe('ABOUT YOU E2E Tests', () => {
         //     cy.get('[data-cy-id="size_38"]').click()
         // }
         
-       cy.get('.Accordion__CollapseIndicator-sc-13l9x97-3').eq(0).click()
-
+       cy.get('.Accordion__CollapseIndicator-sc-13l9x97-3').eq(0).click({force:true})  //Expand product details
+       cy.get('.Accordion__CollapseIndicator-sc-13l9x97-3').eq(1).click({force:true})  //Expand matrial and care details
 
     })
 
@@ -119,15 +122,18 @@ describe('ABOUT YOU E2E Tests', () => {
 
         // iFrame to Facebook oath credntials and Signup -- TODO
 
-        cy.wait(5000)
+        cy.wait(7000)
 
         // Enter user details
-        cy.get('.gender-toggle > > label').last().click()
-        cy.get('.form-input-email > input').type(email)
-        cy.get('.fieldset-gender-name > > input').first().type(users['default'].firstname)
-        cy.get('.fieldset-gender-name > > input').last().type(users['default'].lastname)
-        cy.get('.form-input-password > > input').first().type(password)
-        cy.get('.newsletter-signup-label').click()
+        cy.get('.gender-toggle > > label').last().click()  // Select the Gender to 
+        cy.get('.form-input-email > input').type(email)  // Enter random email and unique
+        cy.get('.fieldset-gender-name > > input').first().type(users['default'].firstname) // Firstname
+        cy.get('.fieldset-gender-name > > input').last().type(users['default'].lastname) // lastname
+        //cy.get('.form-input-password > > input').last().type(password) // password unique
+        cy.get('input[name="password"]').type(password) // password unique
+
+        
+        cy.get('.newsletter-signup-label').click() // opt to subscribe newsletter
         cy.get('.primary').click() 
     })
 
@@ -151,7 +157,7 @@ describe('ABOUT YOU E2E Tests', () => {
     
         cy.server()    // Wait for the payment API response
         cy.route('**/payment').as('getPayment')
-        cy.wait('@getPayment', {timeout: 50000})
+        cy.wait('@getPayment', {timeout: 5000})
         cy.server({ enable: false })
 
         cy.get('.payment-method-svg').eq(7).click()  //Select Sofort Payment option
@@ -165,7 +171,7 @@ describe('ABOUT YOU E2E Tests', () => {
 
     it('Verify for the Final price and proceed', () => {
         //To-Do: add validations
-        cy.get('.order-submit').click()   // Proceed to pay through partner channel
+       cy.get('.order-submit').click()   // Proceed to pay through partner channel
     })
  
     it('Wait for the Financial Details Page and provide credentials', () => {
