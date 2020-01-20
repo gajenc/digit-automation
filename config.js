@@ -1,20 +1,16 @@
 const config = {
   default: {
-    appUrl: 'https://m.aboutyou.de/',
-    username: 'gajendran.c@outlook.com',
-    password: 'aboutyou27%'
+    appUrl: 'https://egov-micro-qa.egovernments.org/',
   },
   integration: {
-    appUrl: 'https://m.aboutyou.de/',
-    username: 'gajendran.c@outlook.com',
-    password: 'aboutyou27%'
+    appUrl: 'https://egov-micro-dev.egovernments.org/',
   },
   qa: {
-    appUrl: 'hhttps://qa.m.aboutyou.de/'
+    appUrl: 'https://egov-micro-qa.egovernments.org/'
     // TODO
   },
-  staging: {
-    appUrl: 'hhttps://stage.m.aboutyou.de/'
+  pbuat: {
+    appUrl: 'https://mseva-uat.lgpunjab.gov.in/'
     // TODO
   }
 };

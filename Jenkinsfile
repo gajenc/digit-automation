@@ -6,7 +6,7 @@ pipeline {
   }
 
   parameters {
-        choice(name: 'TEST_ENV', choices: 'integration\nstaging\nqa', description: 'What is the target test environment?')
+        choice(name: 'TEST_ENV', choices: 'dev\nPB-UAT\nqa', description: 'What is the target test environment?')
   }
 
   environment {
@@ -27,11 +27,11 @@ pipeline {
         sh 'npm i'
         sh 'echo CYPRESS_testenv'
         script {
-          if ("${params.TEST_ENV}" == "integration") {
+          if ("${params.TEST_ENV}" == "dev") {
                   echo 'Executing tests on Integration'
                   sh 'npm run test:ci:int'
-          } else if ("${params.TEST_ENV}" == "staging") {
-                  echo 'Executing tests on Staging'
+          } else if ("${params.TEST_ENV}" == "PB-UAT") {
+                  echo 'Executing tests on PB-UAT'
                   sh 'npm run test:ci:stage'
           } else {
                 echo 'Executing tests on QA'

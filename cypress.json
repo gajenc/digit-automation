@@ -1,9 +1,9 @@
 {
-    "projectId": "fn49y8",
+    "projectId": "jiw1wc",
     "chromeWebSecurity": false,
     "pageLoadTimeout": 150000,
     "testenv": "integration", 
     "viewportWidth": 375, 
-    "viewportHeight": 667 
+    "viewportHeight": 667
 }
 

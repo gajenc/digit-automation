@@ -1,12 +1,7 @@
-# About-you QA-challenge
+# eGov QA Test automation
 
 Observations:
-
-* The site is too slow to work on automation, especially while capturing the objects and dry-running, it requires multiple iteration of performing the same task, but the page is frequenly getting broken at multiple places, any stable env would help automating much faster and effectively.
-
-* There are challenges in identifying the objects as there are no attributes specifically added for most of the react ui components to recognize them uniquely, however object recognition can still be done with the best posiible Object identifucation technique. Modt of the ids, classnames are dynamically being generated, it might change when there are new builds being deployed.
-
-* iFrame at the Signup/Sign-in page needs little extra effort to figure out the right pattern to identify them
+* Initial unwanted calls upon URL call
 
 General:
     - Framework is setup, which demontrates the below
