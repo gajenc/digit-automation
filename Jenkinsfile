@@ -6,7 +6,7 @@ pipeline {
   }
 
   parameters {
-        choice(name: 'TEST_ENV', choices: 'dev\nPB-UAT\nqa', description: 'What is the target test environment?')
+        choice(name: 'TEST_ENV', choices: 'dev\nqa\ndemo\nPB-UAT\nUKD-DEV\nUKD-UAT\nBHR-DEV\nBHR-UAT', description: 'What is the target test environment?')
   }
 
   environment {
