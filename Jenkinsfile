@@ -19,13 +19,13 @@ pipeline {
     stage('Setup') {   
       steps {
         echo "${params.TEST_ENV}"
-        sh 'apt-get update'
-        sh 'apt-get install -y xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2'
+        sh 'sudo apt-get update'
+        sh 'sudo apt-get install -y xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2'
       }
     }
     stage('Test Execution') {
       steps {
-        sh 'npm i'
+        sh 'sudo npm i'
         sh 'echo CYPRESS_testenv'
         script {
           echo "Executing ${params.TEST_SUITE} on ${params.TEST_ENV} .... "
