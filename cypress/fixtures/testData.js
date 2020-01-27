@@ -17,7 +17,6 @@ const testData = {
     addressCountry: 'India',
     dob: '12.03.1982'
 
-
   }
 };
 
